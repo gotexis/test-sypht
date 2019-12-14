@@ -1,68 +1,72 @@
 import React from "react";
+import {
+  faEnvelope,
+  faHome,
+  faPowerOff,
+  faUserAlt
+} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export const Header = () => <header className="hero">
-    <div className="hero-head">
-        <nav className="navbar has-shadow" role="navigation" aria-label="main navigation">
-            <div className="navbar-brand">
+  <div className="hero-head">
+    <nav className="navbar has-shadow" role="navigation" aria-label="main navigation">
+      <div className="navbar-brand">
 
-                <a className="navbar-item is--brand">
-                    <img className="navbar-brand-logo" src="/logo.png" alt="Bulma Admin Template logo"/>
-                </a>
-                <a className="navbar-item is-tab is-hidden-mobile is-active"><span className="icon is-medium"><i
-                    className="fa fa-home"/></span>Home</a>
-                <a className="navbar-item is-tab is-hidden-mobile"
-                   href="https://github.com/mazipan/bulma-admin-dashboard-template">Github</a>
-                <a className="navbar-item is-tab is-hidden-mobile"
-                   href="https://mazipan.github.io/bulma-resume-template/">Resume Template</a>
-                <a className="navbar-item is-tab is-hidden-mobile" href="#about">About</a>
+        <a className="navbar-item is--brand">
+          <img className="navbar-brand-logo" src="https://docs.sypht.com/Sypht-Logo.svg"
+               alt="Bulma Admin Template logo"/>
+        </a>
+        <a className="navbar-item is-tab is-hidden-mobile is-active"><span className="icon is-medium">
+          <FontAwesomeIcon icon={faHome}/></span>Home</a>
+        <a className="navbar-item is-tab is-hidden-mobile"
+           href="https://github.com/gotexis/" target="_blank">Github</a>
+        <button className="button navbar-burger" data-target="navMenu">
+          <span/>
+          <span/>
+          <span/>
+        </button>
 
-                <button className="button navbar-burger" data-target="navMenu">
-                    <span/>
-                    <span/>
-                    <span/>
-                </button>
-
-            </div>
+      </div>
 
 
-            <div className="navbar-menu navbar-end" id="navMenu">
-                <a className="navbar-item is-tab is-hidden-tablet is-active">Home</a>
-                <a className="navbar-item is-tab is-hidden-tablet"
-                   href="https://github.com/mazipan/bulma-admin-dashboard-template">Github</a>
-                <a className="navbar-item is-tab is-hidden-tablet"
-                   href="https://mazipan.github.io/bulma-resume-template/">Resume Template</a>
-                <a className="navbar-item is-tab is-hidden-tablet" href="#about">About</a>
-                <a className="navbar-item nav-tag">
+      <div className="navbar-menu navbar-end" id="navMenu">
+        <a className="navbar-item is-tab is-hidden-tablet is-active">Home</a>
+        <a className="navbar-item is-tab is-hidden-tablet"
+           href="https://github.com/exisz/bulma-admin-dashboard-template">Github</a>
+        <a className="navbar-item is-tab is-hidden-tablet"
+           href="https://exisz.github.io/bulma-resume-template/">Resume Template</a>
+        <a className="navbar-item is-tab is-hidden-tablet" href="#about">About</a>
+        <a className="navbar-item nav-tag">
             <span className="icon is-small">
-              <i className="fa fa-envelope-o"/>
+              <FontAwesomeIcon icon={faEnvelope}/>
             </span>
-                    <span className="tag is-primary tag-notif">6</span>
-                </a>
-                <div className="navbar-item has-dropdown is-hoverable">
-                    <a className="navbar-link">
-                        <figure className="image is-32x32" style={{marginRight: ".5em"}}>
-                            <img src="https://avatars1.githubusercontent.com/u/7221389?v=4&s=32"/>
-                        </figure>
-                        mazipan
-                    </a>
+          <span className="tag is-primary tag-notif">6</span>
+        </a>
+        <div className="navbar-item has-dropdown is-hoverable">
+          <a className="navbar-link">
+            <figure className="image is-32x32" style={{marginRight: ".5em"}}>
+              <img src="https://avatars1.githubusercontent.com/u/7221389?v=4&s=32"/>
+            </figure>
+            exisz
+          </a>
 
-                    <div className="navbar-dropdown is-right">
-                        <a className="navbar-item">
+          <div className="navbar-dropdown is-right">
+            <a className="navbar-item">
                   <span className="icon is-small">
-                    <i className="fa fa-user-o"/>
+                    <FontAwesomeIcon icon={faUserAlt}/>
                   </span>
-                            &nbsp; Profile
-                        </a>
-                        <hr className="navbar-divider"/>
-                        <a className="navbar-item">
+              &nbsp; Profile
+            </a>
+            <hr className="navbar-divider"/>
+            <a className="navbar-item">
                   <span className="icon is-small">
-                    <i className="fa fa-power-off"/>
+                    <FontAwesomeIcon icon={faPowerOff}/>
                   </span>
-                            &nbsp; Logout
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </div>
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
 </header>;

@@ -2,6 +2,7 @@ import React from "react";
 import {Route, Switch} from "react-router-dom";
 import Dashboard from "views/Dashboard";
 import Default from "../layouts/Default";
+import Form from "./Form";
 
 
 export default function App() {
@@ -13,7 +14,8 @@ export default function App() {
             </Route>
             <Route>
               <Default>
-                <Route path="/" component={Dashboard}/>
+                <Route path="/" component={Dashboard} exact />
+                <Route path="/form" component={Form}/>
               </Default>
             </Route>
         </Switch>

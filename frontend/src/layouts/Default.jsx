@@ -6,8 +6,8 @@ import {Sidebar} from "components/Sidebar"
 const Default = ({children}) => <>
     <Header/>
 
-    <div className="wrapper">
-        <div className="columns">
+    <div className="grow">
+        <div className="columns grow-body">
             <Sidebar/>
             {children}
         </div>
