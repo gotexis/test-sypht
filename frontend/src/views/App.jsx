@@ -2,7 +2,7 @@ import React from "react";
 import {Route, Switch} from "react-router-dom";
 import Dashboard from "views/Dashboard";
 import Default from "../layouts/Default";
-import Form from "./Form";
+import Upload from "./Upload";
 
 
 export default function App() {
@@ -15,7 +15,7 @@ export default function App() {
             <Route>
               <Default>
                 <Route path="/" component={Dashboard} exact />
-                <Route path="/form" component={Form}/>
+                <Route path="/form" component={Upload}/>
               </Default>
             </Route>
         </Switch>
