@@ -2,6 +2,13 @@
   "name": "sypht",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint ."
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
     "@fortawesome/free-solid-svg-icons": "^5.12.0",
@@ -11,7 +18,6 @@
     "@testing-library/user-event": "^7.1.2",
     "bulma": "^0.8.0",
     "bulma-dracula": "^1.0.3",
-    "node-sass": "^4.13.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-redux": "^7.1.3",
@@ -21,12 +27,7 @@
     "redux-persist": "^6.0.0",
     "sypht-node-client": "^0.10.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
+
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -43,6 +44,12 @@
     ]
   },
   "devDependencies": {
+    "node-sass": "^4.13.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "^1.19.1",
     "react-router-dom": "^5.1.2"
   }
 }
