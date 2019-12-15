@@ -5,6 +5,8 @@ import utils from "sypht-node-client/lib/utils";
 import fs from "fs";
 import path from "path";
 
+export class InvalidFileError extends Error {}
+
 class CustomSypht {
     /** Client for accessing Sypht REST API
      *
@@ -67,7 +69,7 @@ class CustomSypht {
             const fileData = fs.createReadStream(filePath);
             const isValid = await utils.validateFileType(fileName);
             if (!isValid) {
-                throw new Error('invalid file : ' + fileName);
+                throw new InvalidFileError('invalid file : ' + fileName);
             }
             let formData = new FormData();
             formData.append('fileToUpload', fileData, {fileName});

@@ -21,11 +21,18 @@
         ]
       }
     ],
+    "react/destructuring-assignment": [
+      0
+    ],
+    "no-console": "off",
     "prettier/prettier": [
       "error",
       {
         "semi": false
       }
-    ]
+    ],
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/button-has-type": "off"
   }
 }
+
