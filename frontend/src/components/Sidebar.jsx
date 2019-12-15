@@ -2,7 +2,7 @@ import React from "react"
 import "../views/App.sass"
 import { NavLink } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faTable, faTachometerAlt } from "@fortawesome/free-solid-svg-icons"
+import {faFile, faTable, faTachometerAlt} from "@fortawesome/free-solid-svg-icons"
 
 export const Sidebar = () => (
   <aside className="column is-2 aside">
@@ -22,6 +22,12 @@ export const Sidebar = () => (
           <NavLink to="/upload" activeClassName="is-active">
             <FontAwesomeIcon icon={faTable} className="mr-10" />
             Upload
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/documents" activeClassName="is-active">
+            <FontAwesomeIcon icon={faFile} className="mr-10" />
+            Documents
           </NavLink>
         </li>
 

@@ -4,12 +4,13 @@ import multer from "multer"
 import collection from "../utils/db";
 import {replaceDotWithUnderscore} from "../utils/sanitize";
 
+const mongo = require("mongodb");
+
 export const router = express.Router();
-const upload = multer({dest: 'uploads/'});
+const upload = multer({dest: 'public/uploads/'});
 
 /*
 * Main upload handler
-*
 */
 router.post('/upload', upload.single('file'), async (req, res, next) => {
     const {path: uploadFile} = req.file
@@ -40,4 +41,22 @@ router.post('/upload', upload.single('file'), async (req, res, next) => {
             error: 'Something bad happened and I have no idea what is.'
         })
     }
+});
+
+
+/*
+* Get documents
+*/
+router.get('/documents', async (req, res, next) => {
+    const {skip = 0, limit = 30} = req.query;
+    const documents = await collection.find().limit(limit).skip(parseInt(skip)).toArray()
+    res.jsonp(documents)
+});
+
+/*
+* Get document by ID
+*/
+router.get('/document/:id', async (req, res, next) => {
+    const document = await collection.findOne({_id: new mongo.ObjectID(req.params.id)})
+    res.jsonp(document)
 });

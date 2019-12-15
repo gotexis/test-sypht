@@ -8,7 +8,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import uuid from "uuid"
 
-const syphtFieldsetTypes = ["generic", "document", "invoice", "bill", "bank"]
+import ReactJson from "react-json-view"
+
+const syphtFieldsetTypes = ["generic", "document", "invoice"]
 
 class Upload extends React.Component {
   constructor(props) {
@@ -16,7 +18,8 @@ class Upload extends React.Component {
     this.state = {
       file: null,
       fieldsetTypes: [],
-      errors: []
+      errors: [],
+      results: []
     }
     this.onFormSubmit = this.onFormSubmit.bind(this)
     this.onChange = this.onChange.bind(this)
@@ -42,7 +45,15 @@ class Upload extends React.Component {
     }
     this.fileUpload(file).then(response => {
       // testing
-      if (response) console.log(response.data)
+      if (response) {
+        this.setState({
+          results: [
+            // eslint-disable-next-line react/no-access-state-in-setstate
+            ...this.state.results,
+            response.data
+          ]
+        })
+      }
     })
   }
 
@@ -210,6 +221,9 @@ class Upload extends React.Component {
               />
               {e.msg}
             </div>
+          ))}
+          {this.state.results.map(r => (
+            <ReactJson src={r} key={r._id} theme="monokai" />
           ))}
         </div>
       </main>

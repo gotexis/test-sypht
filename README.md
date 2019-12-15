@@ -9,3 +9,9 @@ and view the results
    * Integrate with a third party API to verify the Supplier ABN on an invoice
    * Cluster similar fields by label from data returned by the generic fieldset
    * Your application needs to be written in JavaScript
+
+# to start
+
+* start a MongoDB server on `//localhost:27017`
+* api/npm start
+* frontend/npm start
