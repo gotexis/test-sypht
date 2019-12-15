@@ -35,3 +35,30 @@ def calculate(p, x, y):
     if calc_angle(x, y) > p * 360 / 100:
         return 'white'
     return 'black'
+
+
+def parse_line(line):
+    try:
+        r = [int(x) for x in line.split(" ")]
+        if len(r) == 3:
+            return r
+    except:
+        return
+
+
+def from_file(file):
+    with open(file, 'r') as f:
+        lines = [
+            calculate(*parse_line(l)) for l in f.readlines()[1:] if parse_line(l)
+        ]
+
+        to_str = [f"Case #{l + 1}: {i}\n" for l, i in enumerate(lines)]
+
+    with open('output.txt', 'w+') as f:
+        f.writelines(to_str)
+
+
+# ==================================================================
+# to test:
+# ==================================================================
+from_file('source.txt')
