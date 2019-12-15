@@ -25,9 +25,16 @@ class Upload extends React.Component {
   }
 
   async fileUpload(file) {
+    const GENERIC = "sypht.generic"
+    const DOCUMENT = "sypht.document"
+    const INVOICE = "sypht.invoice"
+    const BILL = "sypht.bill"
+    const BANK = "sypht.bank"
+
     const url = "http://localhost:5000/upload"
     const formData = new FormData()
     formData.append("file", file)
+    formData.append("fieldSets", JSON.stringify([GENERIC, DOCUMENT]))
     const config = {
       headers: {
         Accept: "application/json",
@@ -78,7 +85,11 @@ class Upload extends React.Component {
                 <div className="field-body">
                   <div className="field">
                     <div className="control">
-                      <input type="file" className="textarea" onChange={this.onChange}/>
+                      <input
+                        type="file"
+                        className="textarea"
+                        onChange={this.onChange}
+                      />
                     </div>
                   </div>
                 </div>
