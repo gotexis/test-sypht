@@ -3,7 +3,7 @@ import React from "react"
 import { Route, Switch } from "react-router-dom"
 import Dashboard from "./Dashboard"
 import Default from "../layouts/Default"
-import Form from "./Form"
+import Upload from "./Upload"
 
 export default function App() {
   return (
@@ -11,7 +11,7 @@ export default function App() {
       <Route>
         <Default>
           <Route path="/" component={Dashboard} exact />
-          <Route path="/form" component={Form} />
+          <Route path="/upload" component={Upload} />
         </Default>
       </Route>
     </Switch>
